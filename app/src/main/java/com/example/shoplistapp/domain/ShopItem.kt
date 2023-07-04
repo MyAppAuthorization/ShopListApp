@@ -3,11 +3,12 @@ package com.example.shoplistapp.domain
 data class ShopItem(
     val name: String,
     val count: Int,
-    val enable: Boolean,
-    var id: Int = UNDEFFINED_ID
+    val enabled: Boolean,
+    var id: Int = UNDEFINED_ID
+
 )
 {
     companion object {
-           const val UNDEFFINED_ID = -1
+           const val UNDEFINED_ID = -1
         }
 }

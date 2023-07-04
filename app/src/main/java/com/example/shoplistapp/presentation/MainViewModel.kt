@@ -9,7 +9,7 @@ import com.example.shoplistapp.domain.EditShopItemUseCase
 import com.example.shoplistapp.domain.GetShopListUseCase
 import com.example.shoplistapp.domain.ShopItem
 
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
 
     private val repository = ShopListRepositoryImpl
 
@@ -19,16 +19,12 @@ class MainViewModel: ViewModel() {
 
     val shopList = getShopListUseCase.getShopList()
 
-    fun deleteShopItem(shopItem: ShopItem){
+    fun deleteShopItem(shopItem: ShopItem) {
         deleteShopItemUseCase.deleteShopItem(shopItem)
-
     }
 
-    fun chengeEnableState(shopItem: ShopItem){
-        val newItem = shopItem.copy(enable = !shopItem.enable)
+    fun changeEnableState(shopItem: ShopItem) {
+        val newItem = shopItem.copy(enabled = !shopItem.enabled)
         editShopItemUseCase.editShopItem(newItem)
-
-
     }
-
 }
