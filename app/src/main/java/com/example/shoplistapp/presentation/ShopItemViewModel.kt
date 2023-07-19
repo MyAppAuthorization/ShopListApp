@@ -6,6 +6,7 @@ import com.example.shoplistapp.domain.AddShopItemUseCase
 import com.example.shoplistapp.domain.EditShopItemUseCase
 import com.example.shoplistapp.domain.GetShopItemUseCase
 import com.example.shoplistapp.domain.ShopItem
+import java.lang.Exception
 
 class ShopItemViewModel: ViewModel() {
 
@@ -45,7 +46,7 @@ class ShopItemViewModel: ViewModel() {
     private fun parseCount (inputCount: String?): Int {
         return try {
             inputCount?.trim()?.toInt() ?: 0
-        } catch (e: java.lang.Exception) {
+        } catch (e: Exception) {
             0
         }
     }
