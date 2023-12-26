@@ -96,13 +96,11 @@ class ShopItemActivity : AppCompatActivity() {
 //            viewModel.editShopItem(etName.text?.toString(), etCount.text?.toString())
 //        }
 //    }
-//
 //    private fun launchAddMode() {
 //        buttonSave.setOnClickListener {
 //            viewModel.addShopItem(etName.text?.toString(), etCount.text?.toString())
 //        }
 //    }
-//
     private fun parseIntent() {
         if (!intent.hasExtra(EXTRA_SCREEN_MODE)) {
             throw RuntimeException("Param screen mode is absent")
