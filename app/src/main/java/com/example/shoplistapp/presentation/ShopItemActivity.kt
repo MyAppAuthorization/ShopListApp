@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.shoplistapp.R
 import com.example.shoplistapp.domain.ShopItem
 
-class ShopItemActivity : AppCompatActivity() {
+class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishedListener {
 
     private var screenMode = MODE_UNKNOWN
     private var shopItemId = ShopItem.UNDEFINED_ID
@@ -20,7 +20,9 @@ class ShopItemActivity : AppCompatActivity() {
             launchRightMode()
         }
     }
-
+    override fun onEditingFinished() {
+        finish()
+    }
     private fun launchRightMode() {
         val fragment = when (screenMode) {
             MODE_EDIT -> ShopItemFragment.newInstanceEditItem(shopItemId)
